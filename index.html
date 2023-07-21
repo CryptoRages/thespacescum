@@ -1,6 +1,27 @@
  <!DOCTYPE html>
 <html>
 <head>
+
+  <script>
+    function loadVideo() {
+      // Hide the start page
+      document.getElementById("start-page").style.display = "none";
+      // Show the video container
+      document.getElementById("video-container").style.display = "block";
+
+      var video = document.getElementById("video");
+      // Play the video
+      video.play();
+
+      // After the video has ended, show the landing page
+      video.onended = function() {
+        document.getElementById("video-container").style.display = "none";
+        document.getElementById("landing-page").style.display = "block";
+      };
+    }
+  </script>
+
+ 
   <link rel="icon" href="/thelogos.png" type="image/png">
   <title>The Space Scum - Do Not Enter</title>
   <style>
@@ -50,7 +71,7 @@
 .custom-logo {
   /* Set a custom width and height for the logo */
   width: 1462px;
-  height: 994px;
+  height: 904px;
   margin-top: -10px;
 }
 
@@ -208,23 +229,5 @@
     </div>
   </div>
 
-  <script>
-    function loadVideo() {
-      // Hide the start page
-      document.getElementById("start-page").style.display = "none";
-      // Show the video container
-      document.getElementById("video-container").style.display = "block";
-
-      var video = document.getElementById("video");
-      // Play the video
-      video.play();
-
-      // After the video has ended, show the landing page
-      video.onended = function() {
-        document.getElementById("video-container").style.display = "none";
-        document.getElementById("landing-page").style.display = "block";
-      };
-    }
-  </script>
 </body>
 </html>
