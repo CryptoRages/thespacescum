@@ -50,8 +50,8 @@
 .custom-logo {
   /* Set a custom width and height for the logo */
   width: 1462px;
-  height: 1241px;
-  margin-top: 1px;
+  height: 1041px;
+  margin-top: -10px;
 }
 
 /* Media query for small screens (e.g., smartphones) */
@@ -135,28 +135,6 @@
   color: #333; /* Set a text color for cells with class "special-cell" */
 }
 
-   /* Additional styles for the marquee */
-.marquee {
-  white-space: nowrap; /* Prevent the text from wrapping to a new line */
-  overflow: hidden; /* Hide any overflowing content */
-}
-
-.marquee::before {
-  content: attr(data-text); /* Set the content of ::before pseudo-element to the data-text attribute */
-  display: inline; /* Display the content as inline */
-  animation: marquee 5s linear infinite; /* Apply the marquee animation */
-}
-
-/* Keyframes for the marquee animation */
-@keyframes marquee {
-  from {
-    transform: translateX(100%); /* Move the text 100% to the right (off-screen) */
-  }
-  to {
-    transform: translateX(-100%); /* Move the text 100% to the left (off-screen) */
-  }
-}
-
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       body {
@@ -173,7 +151,7 @@
 </head>
 <body>
   <div id="start-page">
-   <p>class="marquee">DO NOT ENTER</p>
+    <p>DO NOT ENTER</p>
     <br>
     <br>
     <!-- Replace 'image.jpg' with the path to your image -->
