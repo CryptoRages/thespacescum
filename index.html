@@ -6,15 +6,21 @@
     body {
       margin: 0;
       overflow: hidden;
-      background-image: url('bg.gif'); /* Replace 'background-image.jpg' with the path to your background image */
+      background-image: url('https://i.pinimg.com/736x/64/31/35/643135e60d9de9543ade17d3b96fff8a.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-repeat: repeat-y;
     }
     #start-page {
       cursor: pointer;
+      text-align: center;
+    }
+    #start-page a {
+      color: blue;
+      text-decoration: none;
     }
     #video-container {
       position: fixed;
@@ -59,12 +65,31 @@
     video::-webkit-media-controls-panel {
       display: none !important;
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      body {
+        display: block;
+      }
+      #start-page {
+        margin-top: 20vh;
+      }
+      #landing-page h1 {
+        margin-top: 10vh;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="start-page">
+    <!-- Text hyperlink above the image -->
+    <a href="#" target="_blank">Link Above</a>
+    <br>
     <!-- Replace 'image.jpg' with the path to your image -->
     <img src="/The Door.gif" alt="Click to Play Video" onclick="loadVideo()">
+    <br>
+    <!-- Text hyperlink below the image -->
+    <a href="#" target="_blank">Link Below</a>
   </div>
 
   <div id="video-container">
