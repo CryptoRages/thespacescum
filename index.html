@@ -36,7 +36,7 @@
       height: 100%;
       object-fit: cover;
     }
-   #landing-page {
+  #landing-page {
   display: none;
   text-align: center;
   color: #fff;
@@ -48,12 +48,39 @@
 }
 
 .custom-logo {
-  /* Add your custom settings for the logo here */
-  width: 414px; /* For example, set the width */
-  height: 41px; /* Set the height as "auto" to maintain aspect ratio */
-  margin-top: 10px; /* Add some top margin */
- 
+  /* Set a default width for the logo */
+  width: 200px;
+  height: auto;
+  margin-top: 50px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
+/* Media query for small screens (e.g., smartphones) */
+@media (max-width: 600px) {
+  .custom-logo {
+    /* Adjust the width for smaller screens */
+    width: 150px;
+  }
+}
+
+/* Media query for medium-sized screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .custom-logo {
+    /* Adjust the width for medium-sized screens */
+    width: 250px;
+  }
+}
+
+/* Media query for large screens (e.g., desktops) */
+@media (min-width: 1025px) {
+  .custom-logo {
+    /* Adjust the width for large screens */
+    width: 300px;
+  }
+}
+
     #landing-page h1 {
      
       font-size: 3rem;
