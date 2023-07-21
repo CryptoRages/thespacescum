@@ -6,6 +6,8 @@
     body {
       margin: 0;
       overflow: hidden;
+      background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,39 +37,53 @@
       object-fit: cover;
     }
     #landing-page {
+      display: none;
       text-align: center;
       color: #fff;
-      background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
-      background-size: cover;
+      background-color: #333;
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       z-index: 9998;
-      display: none;
+      overflow-y: auto; /* Enable vertical scrollbar */
     }
-    #landing-page img {
-      width: 100px;
-      height: 100px;
-      cursor: pointer;
+    #landing-page h1 {
+      margin-top: 30vh;
+      font-size: 3rem;
     }
-    #landing-page table {
-      margin-top: 50px;
+    #landing-page p {
+      font-size: 1.5rem;
+    }
+
+    /* Glitter effect for the table */
+    table {
       border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+      background-image: linear-gradient(45deg, #FFC700 25%, transparent 25%), linear-gradient(-45deg, #FFC700 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #FFC700 75%), linear-gradient(-45deg, transparent 75%, #FFC700 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      box-shadow: 0 0 20px rgba(255, 199, 0, 0.8);
     }
-    #landing-page td {
-      padding: 5px;
+    th, td {
+      border: 1px solid #FFC700;
+      padding: 10px;
     }
-    /* Hide default video controls */
-    video::-webkit-media-controls {
-      display: none !important;
+
+    /* Custom styles for the scrollbar (mimicking old Internet Explorer) */
+    ::-webkit-scrollbar {
+      width: 12px;
+      background-color: #f5f5f5;
     }
-    video::-webkit-media-controls-enclosure {
-      display: none !important;
+    ::-webkit-scrollbar-thumb {
+      background-color: #c1c1c1;
+      border: 4px solid transparent;
+      background-clip: content-box;
     }
-    video::-webkit-media-controls-panel {
-      display: none !important;
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #888;
     }
 
     /* Mobile responsiveness */
@@ -101,18 +117,22 @@
   </div>
 
   <div id="landing-page">
-    <img src="top-image-holder.jpg" alt="Top Image Holder">
+    <div>
+      <!-- Replace 'image-holder.jpg' with the path to your image holder image -->
+      <img src="image-holder.jpg" alt="Image Holder">
+    </div>
     <table>
-      <!-- Create 11 rows -->
+      <!-- Add 11 rows and 20 columns -->
       <tr>
-        <!-- Create 20 columns -->
-        <td><img src="image-holder.jpg" alt="Clickable Image Holder" onclick="handleImageClick()"></td>
-        <td><img src="image-holder.jpg" alt="Clickable Image Holder" onclick="handleImageClick()"></td>
-        <!-- Add more columns as needed -->
+        <td><a href="#" target="_blank"><img src="image-holder.jpg" alt="Clickable Image"></a></td>
+        <!-- Add more columns here -->
       </tr>
-      <!-- Add more rows as needed -->
+      <!-- Add more rows here -->
     </table>
-    <img src="bottom-image-holder.jpg" alt="Bottom Image Holder">
+    <div>
+      <!-- Replace 'image-holder.jpg' with the path to your image holder image -->
+      <img src="image-holder.jpg" alt="Image Holder">
+    </div>
   </div>
 
   <script>
@@ -131,12 +151,6 @@
         document.getElementById("video-container").style.display = "none";
         document.getElementById("landing-page").style.display = "block";
       };
-    }
-
-    function handleImageClick() {
-      // Implement your desired functionality when an image is clicked
-      // For example, you can open a link or perform an action
-      alert("Image clicked!");
     }
   </script>
 </body>
