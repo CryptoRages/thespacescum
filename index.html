@@ -36,16 +36,26 @@
       height: 100%;
       object-fit: cover;
     }
-    #landing-page {
-      display: none;
-      text-align: center;
-      color: #fff;
-      background-image: url('bg_stars.gif');
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      overflow-y: auto; /* Enable vertical scrollbar */
-    }
+   #landing-page {
+  display: none;
+  text-align: center;
+  color: #fff;
+  background-image: url('bg_stars.gif');
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.custom-logo {
+  /* Add your custom settings for the logo here */
+  width: 200px; /* For example, set the width */
+  height: auto; /* Set the height as "auto" to maintain aspect ratio */
+  margin-top: 10px; /* Add some top margin */
+  border: 2px solid #fff; /* Add a white border around the logo */
+  border-radius: 10px; /* Apply some border radius for a rounded look */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a slight shadow */
+}
     #landing-page h1 {
      
       font-size: 3rem;
@@ -95,7 +105,7 @@
   <div id="landing-page">
     <div>
       <!-- Replace 'image-holder.jpg' with the path to your image holder image -->
-      <img src="/thelogo.png" alt="Image Holder">
+      <img src="/thelogo.png" alt="Image Holder" class="custom-logo">
     </div>
    <center> <table>
       <!-- Add 11 rows -->
