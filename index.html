@@ -40,16 +40,26 @@
     #landing-page p {
       font-size: 1.5rem;
     }
+    /* Hide default video controls */
+    video::-webkit-media-controls {
+      display: none !important;
+    }
+    video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+    video::-webkit-media-controls-panel {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
   <div id="start-page">
     <!-- Replace 'image.jpg' with the path to your image -->
-    <img src="/The Door.gif" alt="Click to Play Video" onclick="loadVideo()">
+    <img src="/The Transistions.mp4" alt="Click to Play Video" onclick="loadVideo()">
   </div>
 
   <div id="video-container">
-    <video id="video" autoplay playsinline controls>
+    <video id="video" autoplay playsinline>
       <!-- Replace 'video.mp4' with the path to your video file -->
       <source src="/The Transistions.mp4" type="video/mp4">
       Your browser does not support the video tag.
