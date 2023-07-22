@@ -72,7 +72,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            border: 2px solid #007bff; /* Add color to the outside border */
+            border: 2px solid #fff; /* Add color to the outside border */
         }
 
         th, td {
@@ -203,12 +203,12 @@
   <div class="table-container">
         <table>
             <tr>
-               <th><img src="/HOME.gif" alt="Image 1" width="100" height="100"></th>
-                <th><img src="/ABOUT.gif" alt="Image 1" width="100" height="100"></th>
-                <th><img src="/TELEGRAM.gif" alt="Image 1" width="100" height="100"></th>
-                <th><img src="/TWITTER.gif" alt="Image 1" width="100" height="100"></th>
-                <th><img src="/DEXTOOLS.gif" alt="Image 1" width="100" height="100"></th>
-                <th><img src="/TOKENOMICS.gif" alt="Image 1" width="100" height="100"></th>
+               <th><img src="/HOME.gif" alt="Image 1" width="300" height="100"></th>
+                <th><img src="/ABOUT.gif" alt="Image 1" width="300" height="100"></th>
+                <th><img src="/TELEGRAM.gif" alt="Image 1" width="300" height="100"></th>
+                <th><img src="/TWITTER.gif" alt="Image 1" width="300" height="100"></th>
+                <th><img src="/DEXTOOLS.gif" alt="Image 1" width="300" height="100"></th>
+                <th><img src="/TOKENOMICS.gif" alt="Image 1" width="300" height="100"></th>
             </tr>
       
         </table>
@@ -226,14 +226,14 @@
    
     <div>
 
-       <h1>Upload Your own GIF</h1>
+    <h1>Upload and Display GIF</h1>
     <form id="uploadForm" enctype="multipart/form-data">
         <input type="file" name="gifFile" id="uploadInput" accept="image/gif" />
         <input type="submit" value="Upload GIF" />
     </form>
     <div id="imageContainer"></div>
 
- <script>
+    <script>
         document.getElementById('uploadForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -248,9 +248,9 @@
                 body: formData
             })
             .then(response => response.text())
-            .then(url => {
+            .then(dataUrl => {
                 const imageContainer = document.getElementById('imageContainer');
-                imageContainer.innerHTML = `<img src="${url}" alt="Uploaded GIF" width="300" />`;
+                imageContainer.innerHTML = `<img src="${dataUrl}" alt="Uploaded GIF" width="300" />`;
             })
             .catch(error => console.error('Error uploading GIF:', error));
         });
