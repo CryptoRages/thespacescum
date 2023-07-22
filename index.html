@@ -222,7 +222,7 @@
  </div>
    
     <div>
-      <!-- Replace 'image-holder.jpg' with the path to your image holder image -->
+    
    <img src="https://i.makeagif.com/media/11-17-2022/z-CcwL.gif">
    <img src="https://media.tenor.com/jgkmaSZZYqkAAAAd/digibyte-dgb.gif">
      <br>
@@ -237,5 +237,36 @@
     </div>
   </div>
 
+
+  <h1>Upload and Display GIF</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="gifFile" id="uploadInput" accept="image/gif" />
+        <input type="submit" value="Upload GIF" />
+    </form>
+    <div id="imageContainer"></div>
+
+ <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fileInput = document.getElementById('uploadInput');
+            const file = fileInput.files[0];
+
+            const formData = new FormData();
+            formData.append('gifFile', file);
+
+            fetch('upload.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(url => {
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = `<img src="${url}" alt="Uploaded GIF" width="300" />`;
+            })
+            .catch(error => console.error('Error uploading GIF:', error));
+        });
+    </script>
+ 
 </body>
 </html>
